@@ -12,9 +12,10 @@ const DataCard = ({ info }) => {
           boxShadow: 1,
           borderRadius: 1,
           p: 2,
-          minWidth: 350,
+          minWidth: 300,
           minHeight: 150,
-          margin: 10,
+          marginTop: 10,
+          marginBottom: 10,
         }}
       >
         <Box sx={{ color: "text.secondary", textAlign: "center" }}>{info}</Box>

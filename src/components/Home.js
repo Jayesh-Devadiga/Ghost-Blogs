@@ -5,12 +5,12 @@ import TitleBar from "./TitleBar";
 
 const Home = () => {
   return (
-    <div style={{ background: "#ecf0f1", height: "100vh" }}>
+    <div>
       <CssBaseline />
       <TitleBar />
-      {/* <div style={{ display: "flex", justifyContent: "space-between", padding: "20px", flexWrap: "wrap" }}> */}
-      <Dashboard />
-      {/* </div> */}
+      <div style={{ padding: "20px", margin: "20px" }}>
+        <Dashboard />
+      </div>
     </div>
   );
 };

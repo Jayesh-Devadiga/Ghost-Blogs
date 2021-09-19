@@ -40,6 +40,11 @@ const PostsPage = ({ posts }) => {
   return (
     <div>
       <PostList posts={postsWithoutMetaDescription} listTitle={"Posts without Meta Description"} />
+      <PostList posts={postsWithLongMetaDescription} listTitle={"Posts with long Meta Description"} />
+      <PostList posts={postsWithLongURL} listTitle={"Posts with long URL"} />
+      <PostList posts={postsWithoutImage} listTitle={"Posts without Feature Image"} />
+      <PostList posts={shortPosts} listTitle={"Short Posts"} />
+      <PostList posts={longPosts} listTitle={"Long Posts"} />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import PostList from "./PostList";
 
 const PostsPage = ({ posts }) => {
   const postsWithoutMetaDescription = posts.filter((post) => post.meta_description === null); //List of Posts without Meta Description
-  console.log(postsWithoutMetaDescription);
+  //   console.log(postsWithoutMetaDescription);
   const postsWithLongMetaDescription = posts.filter((post) => post.meta_description && post.meta_description.length > 150); //Too long Meta Description, more than 150 char
   //   console.log(postsWithLongMetaDescription);
   const postsWithLongURL = posts.filter((post) => post.url.length > 100); //Too long URL, more than 100 chars
@@ -39,7 +39,7 @@ const PostsPage = ({ posts }) => {
 
   return (
     <div>
-      <PostList>{renderPostsWithoutMetaDescription()}</PostList>
+      <PostList posts={postsWithoutMetaDescription} listTitle={"Posts without Meta Description"} />
     </div>
   );
 };

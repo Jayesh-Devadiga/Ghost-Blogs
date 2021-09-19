@@ -4,7 +4,7 @@ import React from "react";
 
 const PostList = () => {
   return (
-    <List style={{ width: "100%", background: "red" }}>
+    <List style={{ width: "100%", background: "grey" }}>
       <ListItem>
         <ListItemAvatar>
           <Avatar>

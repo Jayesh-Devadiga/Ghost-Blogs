@@ -4,24 +4,31 @@ import { fetchData } from "../redux/actions";
 import DataCard from "./DataCard";
 import DataChart from "./DataChart";
 import PostList from "./PostList";
+import Card from "./Card";
 
 const Dashboard = ({ fetchData, data }) => {
   console.log(data);
+
   const { posts, pages, authors, tags } = data;
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
         <DataCard info="Total number of Posts" count={posts.length} />
         <DataCard info="Total number of Pages" count={pages.length} />
         <DataCard info="Total number of Tags" count={tags.length} />
         <DataCard info="Total number of Authors" count={authors.length} />
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", marginTop: "30px", flexWrap: "wrap" }}>
-        <PostList />
-        {/* <DataChart /> */}
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+        <Card>
+          <PostList />
+        </Card>
+        <Card>
+          <DataChart />
+        </Card>
       </div>
     </div>
   );

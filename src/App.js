@@ -6,6 +6,7 @@ import store from "./redux/store";
 const App = () => {
   return (
     <Provider store={store}>
+      {/* switch */}
       <Home />
     </Provider>
   );

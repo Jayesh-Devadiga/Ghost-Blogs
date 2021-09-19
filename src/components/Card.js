@@ -3,8 +3,9 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "10px",
-    margin: "10px",
+    // padding: "10px",
+    // margin: "10px",
+    marginTop: 20,
     height: 250,
     width: "100%",
     [theme.breakpoints.up("sm")]: {

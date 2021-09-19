@@ -3,6 +3,8 @@ import { BarChart } from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
 import React from "react";
 import { useState } from "react";
+import { connect } from "react-redux";
+import { switchPage } from "../redux/actions/index";
 
 const useStyles = makeStyles((theme) => ({
   optionsFull: {
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const TitleBar = () => {
+const TitleBar = ({ switchPage }) => {
   const classes = useStyles();
   const { optionsFull, optionsMenu } = classes;
   const [element, setElement] = useState(false);
@@ -26,8 +28,9 @@ const TitleBar = () => {
   const handleClick = (event) => {
     setElement(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleMenuClick = (page) => {
     setElement(null);
+    switchPage(page);
   };
   return (
     <AppBar position="static">
@@ -40,18 +43,24 @@ const TitleBar = () => {
         </div>
         <div style={{ display: "flex" }}>
           <div className={optionsFull}>
-            <Button color="inherit">Dashboard</Button>
-            <Button color="inherit">Posts</Button>
-            <Button color="inherit">Links</Button>
+            <Button color="inherit" onClick={() => switchPage("dashboard")}>
+              Dashboard
+            </Button>
+            <Button color="inherit" onClick={() => switchPage("posts")}>
+              Posts
+            </Button>
+            <Button color="inherit" onClick={() => switchPage("links")}>
+              Links
+            </Button>
           </div>
           <div className={optionsMenu}>
             <IconButton color="inherit" onClick={handleClick}>
               <MenuIcon />
             </IconButton>
-            <Menu anchorEl={element} open={open} onClose={handleClose}>
-              <MenuItem onClick={handleClose}>Dashboard</MenuItem>
-              <MenuItem onClick={handleClose}>Posts</MenuItem>
-              <MenuItem onClick={handleClose}>Links</MenuItem>
+            <Menu anchorEl={element} open={open} onClose={() => setElement(null)}>
+              <MenuItem onClick={() => handleMenuClick("dashboard")}>Dashboard</MenuItem>
+              <MenuItem onClick={() => handleMenuClick("posts")}>Posts</MenuItem>
+              <MenuItem onClick={() => handleMenuClick("links")}>Links</MenuItem>
             </Menu>
           </div>
         </div>
@@ -60,4 +69,4 @@ const TitleBar = () => {
   );
 };
 
-export default TitleBar;
+export default connect(null, { switchPage })(TitleBar);

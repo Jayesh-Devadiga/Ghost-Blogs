@@ -1,8 +1,7 @@
 import React from "react";
-import { TrendingUp } from "@material-ui/icons";
 import { Box } from "@material-ui/core";
 
-const DataCard = ({ info }) => {
+const DataCard = ({ info, count }) => {
   return (
     <div>
       <Box
@@ -19,7 +18,7 @@ const DataCard = ({ info }) => {
         }}
       >
         <Box sx={{ color: "text.secondary", textAlign: "center" }}>{info}</Box>
-        <Box sx={{ color: "text.primary", fontSize: 34, fontWeight: "medium", textAlign: "center", padding: 20 }}>98.3 K</Box>
+        <Box sx={{ color: "text.primary", fontSize: 34, fontWeight: "medium", textAlign: "center", padding: 20 }}>{count}</Box>
       </Box>
     </div>
   );

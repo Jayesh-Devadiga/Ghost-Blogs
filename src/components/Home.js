@@ -5,7 +5,7 @@ import TitleBar from "./TitleBar";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ background: "#ecf0f1" }}>
       <CssBaseline />
       <TitleBar />
       <div style={{ padding: "20px", margin: "20px" }}>

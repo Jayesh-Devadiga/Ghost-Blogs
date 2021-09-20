@@ -7,7 +7,6 @@ import PostsPage from "./PostsPage";
 import TitleBar from "./TitleBar";
 
 const Home = ({ page }) => {
-  console.log(page);
   const renderPage = () => {
     if (page === "dashboard") {
       return <Dashboard />;

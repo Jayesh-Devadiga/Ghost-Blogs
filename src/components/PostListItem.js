@@ -12,7 +12,6 @@ const useStyles = makeStyles(() => ({
   },
 }));
 const PostListItem = (props) => {
-  console.log(props, "postlistitem");
   const classes = useStyles();
   const { imageUrl, title, url } = props;
 
@@ -25,7 +24,7 @@ const PostListItem = (props) => {
           </Grid>
           <Grid item xs={11}>
             <Typography style={{ color: "#555" }}>{title}</Typography>
-            <Link style={{ color: "#777", cursor: "pointer" }} href={url}>
+            <Link style={{ color: "#777", cursor: "pointer" }} href={url} target="_blank">
               {url}
             </Link>
           </Grid>

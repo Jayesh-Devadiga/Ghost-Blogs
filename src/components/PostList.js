@@ -4,7 +4,7 @@ import PostListItem from "./PostListItem";
 
 const PostList = (props) => {
   return (
-    <Card reised style={{ marginBottom: "60px", padding: "20px" }}>
+    <Card raised style={{ marginBottom: "60px", padding: "20px" }}>
       <Typography style={{ textAlign: "center", marginTop: "10px", marginBottom: "10px" }}>{props.listTitle}</Typography>
       {props.posts && props.posts.length > 0 ? (
         props.posts.map((post) => (
@@ -22,14 +22,3 @@ const PostList = (props) => {
 };
 
 export default PostList;
-
-{
-  /* <ListItem>
-  <ListItemAvatar>
-    <Avatar>
-      <Image />
-    </Avatar>
-  </ListItemAvatar>
-  <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-</ListItem>; */
-}

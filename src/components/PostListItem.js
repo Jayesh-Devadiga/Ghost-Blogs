@@ -4,7 +4,6 @@ import React from "react";
 const useStyles = makeStyles(() => ({
   card: {
     marginBottom: 15,
-    // cursor: "pointer",
   },
   avatar: {
     minWidth: 50,

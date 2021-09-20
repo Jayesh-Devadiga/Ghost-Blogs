@@ -3,11 +3,8 @@ import React from "react";
 import PostListItem from "./PostListItem";
 
 const PostList = (props) => {
-  const domainURL = "https://ghost-blog.ipxp.in/";
-  const urlRegex = /http:\/\/143.244.136.65:2368/g;
-  console.log(urlRegex.test("http://143.244.136.65:2368/author/sm"));
   return (
-    <div style={{ marginBottom: "60px" }}>
+    <Card reised style={{ marginBottom: "60px", padding: "20px" }}>
       <Typography style={{ textAlign: "center", marginTop: "10px", marginBottom: "10px" }}>{props.listTitle}</Typography>
       {props.posts && props.posts.length > 0 ? (
         props.posts.map((post) => (
@@ -20,7 +17,7 @@ const PostList = (props) => {
           </CardContent>
         </Card>
       )}
-    </div>
+    </Card>
   );
 };
 

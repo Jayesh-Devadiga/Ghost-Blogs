@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-In the project directory, you can run:
+https://stoic-volhard-b9264e.netlify.app/
 
 ## Available Scripts
 

@@ -1,3 +1,4 @@
+import { Grid } from "@material-ui/core";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchData } from "../redux/actions";
@@ -36,10 +37,14 @@ const Dashboard = ({ fetchData, data }) => {
         <DataCard info="Total number of Tags" count={tags.length} />
         <DataCard info="Total number of Authors" count={authors.length} />
       </div>
-      <div style={{}}>
-        <PostList posts={posts.length > 0 && sortedPosts.slice(0, 5)} listTitle="Latest Published Posts" />
-        <DataChart postsPerMonth={chartData} />
-      </div>
+      <Grid container style={{ width: "100%", height: "100%" }} direction="row" justifyContent="space-between">
+        <Grid item xs={12} lg={5}>
+          <PostList posts={posts.length > 0 && sortedPosts.slice(0, 5)} listTitle="Latest Published Posts" />
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <DataChart postsPerMonth={chartData} />
+        </Grid>
+      </Grid>
     </div>
   );
 };

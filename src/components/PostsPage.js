@@ -1,3 +1,4 @@
+import { Grid } from "@material-ui/core";
 import React from "react";
 import { connect } from "react-redux";
 import PostList from "./PostList";
@@ -10,14 +11,26 @@ const PostsPage = ({ posts }) => {
   const shortPosts = posts.filter((post) => post.html.length < 250);
   const longPosts = posts.filter((post) => post.html.length > 1500);
   return (
-    <div>
-      <PostList posts={postsWithoutMetaDescription} listTitle={"Posts without Meta Description"} />
-      <PostList posts={postsWithLongMetaDescription} listTitle={"Posts with long Meta Description"} />
-      <PostList posts={postsWithLongURL} listTitle={"Posts with long URL"} />
-      <PostList posts={postsWithoutImage} listTitle={"Posts without Feature Image"} />
-      <PostList posts={shortPosts} listTitle={"Short Posts"} />
-      <PostList posts={longPosts} listTitle={"Long Posts"} />
-    </div>
+    <Grid container direction="row" justifyContent="space-between">
+      <Grid item xs={12} lg={4}>
+        <PostList posts={postsWithoutMetaDescription} listTitle={"Posts without Meta Description"} />
+      </Grid>
+      <Grid item xs={12} lg={4}>
+        <PostList posts={longPosts} listTitle={"Long Posts"} />
+      </Grid>
+      <Grid item xs={12} lg={4}>
+        <PostList posts={postsWithLongMetaDescription} listTitle={"Posts with long Meta Description"} />
+      </Grid>
+      <Grid item xs={12} lg={4}>
+        <PostList posts={postsWithLongURL} listTitle={"Posts with long URL"} />
+      </Grid>
+      <Grid item xs={12} lg={4}>
+        <PostList posts={postsWithoutImage} listTitle={"Posts without Feature Image"} />
+      </Grid>
+      <Grid item xs={12} lg={4}>
+        <PostList posts={shortPosts} listTitle={"Short Posts"} />
+      </Grid>
+    </Grid>
   );
 };
 

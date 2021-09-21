@@ -17,11 +17,11 @@ const PostListItem = (props) => {
   return (
     <Card raised className={classes.card}>
       <CardContent>
-        <Grid container style={{ display: "flex" }}>
-          <Grid item xs={1}>
+        <Grid container direction="row" justifyContent="space-between">
+          <Grid item xs={12} md={1}>
             <Avatar className={classes.avatar} src={imageUrl} />
           </Grid>
-          <Grid item xs={11}>
+          <Grid item xs={12} md={10}>
             <Typography style={{ color: "#555" }}>{title}</Typography>
             <Link style={{ color: "#777", cursor: "pointer" }} href={url} target="_blank">
               {url}

@@ -4,7 +4,7 @@ import LinkListItem from "./LinkListItem";
 
 const LinksList = ({ title, links }) => {
   return (
-    <Card raised style={{ marginBottom: "60px", padding: "20px" }}>
+    <Card raised style={{ marginBottom: "60px", padding: "20px", width: "100%" }}>
       <Typography style={{ textAlign: "center", marginTop: "10px", marginBottom: "10px" }}>{title}</Typography>
       {links && links.length > 0 ? (
         links.map((link) => <LinkListItem key={link} url={link} />)

@@ -16,7 +16,7 @@ const LinksPage = ({ posts }) => {
   const externalLinks = uniqueUrls.filter((url) => !url.includes("ghost-blog.ipxp.in"));
   return (
     <div>
-      <Card raised style={{ marginBottom: "60px", padding: "20px" }}>
+      <Card raised style={{ marginBottom: "60px", padding: "20px", width: "100%" }}>
         <CardContent>
           <Grid container style={{ display: "flex" }} direction="column" alignItems="center">
             <Typography style={{ color: "#555", marginBottom: "10px" }}>
@@ -31,8 +31,15 @@ const LinksPage = ({ posts }) => {
           </Grid>
         </CardContent>
       </Card>
-      <LinksList links={internalLinks} title="Internal Links Found" />
-      <LinksList links={externalLinks} title="External Links Found" />
+
+      <Grid container direction="row" justifyContent="space-between">
+        <Grid item md={12} lg={5}>
+          <LinksList links={internalLinks} title="Internal Links Found" />
+        </Grid>
+        <Grid item md={12} lg={5}>
+          <LinksList links={externalLinks} title="External Links Found" />
+        </Grid>
+      </Grid>
     </div>
   );
 };

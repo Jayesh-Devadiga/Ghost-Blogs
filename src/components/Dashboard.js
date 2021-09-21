@@ -11,7 +11,14 @@ const Dashboard = ({ fetchData, data }) => {
   useEffect(() => {
     fetchData();
   }, []);
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fetchData();
+    }, 10000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [data]);
   const sortedPosts = posts.length > 0 && posts.sort((a, b) => b.published_at - a.published_at);
   const dates = sortedPosts.length > 0 && sortedPosts.map((post) => post.published_at.slice(0, 7)).reverse();
   const findPostsPermonth = (arr) => {
